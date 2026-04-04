@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>灵魂信息素深度测评</title>
+  <meta
+    name="description"
+    content="完成 30 道题，解锁你的灵魂气味、情感底色与气场画像。"
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero__glow hero__glow--left"></div>
+      <div class="hero__glow hero__glow--right"></div>
+      <p class="eyebrow">Soul Pheromone Profile</p>
+      <h1>灵魂信息素深度测评</h1>
+      <p class="hero__lede">
+        一场介于心理画像、星象隐喻与情绪叙事之间的自我辨认。
+        请凭第一直觉完成 30 道题，在安静时刻里，听见你灵魂真正散发的气味。
+      </p>
+
+      <div class="hero__cards">
+        <article class="mini-card">
+          <span>心理学大师</span>
+          <p>剖析潜意识、防御机制与依恋模式</p>
+        </article>
+        <article class="mini-card">
+          <span>星座占卜大师</span>
+          <p>解读你的元素能量、命运感与灵魂轨迹</p>
+        </article>
+        <article class="mini-card">
+          <span>伤痛文学作者</span>
+          <p>凝视那些未愈合的裂痕与隐秘渴望</p>
+        </article>
+      </div>
+
+      <div class="hero__meta">
+        <div>
+          <strong>30</strong>
+          <span>道题</span>
+        </div>
+        <div>
+          <strong>5-8</strong>
+          <span>分钟完成</span>
+        </div>
+        <div>
+          <strong>沉浸式</strong>
+          <span>单页体验</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <section class="panel panel--sticky">
+          <div class="progress-copy">
+            <p class="panel__label">答题进度</p>
+            <h2><span id="answeredCount">0</span> / 30</h2>
+            <p id="progressText">先从第一直觉开始，别想太久。</p>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div id="progressFill" class="progress-bar__fill"></div>
+          </div>
+          <button id="submitBtn" class="button button--primary" type="button">
+            查看我的灵魂信息素
+          </button>
+          <button id="resetBtn" class="button button--ghost" type="button">
+            清空重做
+          </button>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="intro panel">
+          <p class="panel__label">测评说明</p>
+          <p>
+            “信息素（Pheromone）”在这里不只是生理吸引，更像一种无声的气场。
+            它是你的灵魂底色，是你吸引同类、拒绝异类的隐形边界。
+          </p>
+          <p>
+            全程没有标准答案，也不需要分析题目。别停留太久，让第一反应带你走进去。
+          </p>
+        </section>
+
+        <div id="questionSections" class="question-list"></div>
+
+        <section id="resultSection" class="result panel hidden" aria-live="polite">
+          <p class="panel__label">测评结果</p>
+          <div class="result__header">
+            <p id="resultTag" class="result__tag"></p>
+            <h2 id="resultTitle"></h2>
+            <p id="resultSubtitle" class="result__subtitle"></p>
+          </div>
+
+          <div class="result__body">
+            <article>
+              <h3>心理侧写</h3>
+              <p id="resultPsychology"></p>
+            </article>
+            <article>
+              <h3>星象投射</h3>
+              <p id="resultAstro"></p>
+            </article>
+            <article>
+              <h3>文学意象</h3>
+              <p id="resultLiterary"></p>
+            </article>
+            <article class="article--wide">
+              <h3>你的信息素</h3>
+              <p id="resultDescription"></p>
+            </article>
+            <article class="article--wide">
+              <h3>给你的忠告</h3>
+              <p id="resultAdvice"></p>
+            </article>
+          </div>
+
+          <div class="share-actions">
+            <button id="copyLinkBtn" class="button button--ghost" type="button">
+              复制页面链接
+            </button>
+            <button id="copyResultBtn" class="button button--primary" type="button">
+              复制我的结果文案
+            </button>
+          </div>
+          <p id="shareFeedback" class="share-feedback" aria-live="polite"></p>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
