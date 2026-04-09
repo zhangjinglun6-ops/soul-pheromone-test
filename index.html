@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div class="top-progress" aria-hidden="true">
+    <div id="topProgressFill" class="top-progress__fill"></div>
+  </div>
   <div class="page-shell">
     <header class="hero">
       <div class="hero__glow hero__glow--left"></div>
@@ -70,9 +73,6 @@
           <div class="progress-bar" aria-hidden="true">
             <div id="progressFill" class="progress-bar__fill"></div>
           </div>
-          <button id="submitBtn" class="button button--primary" type="button">
-            查看我的灵魂信息素
-          </button>
           <button id="resetBtn" class="button button--ghost" type="button">
             清空重做
           </button>
@@ -92,6 +92,14 @@
         </section>
 
         <div id="questionSections" class="question-list"></div>
+
+        <section class="submit-panel panel">
+          <p class="panel__label">结果揭晓</p>
+          <p>当你完成所有题目后，就在这里查看你的灵魂信息素。</p>
+          <button id="submitBtn" class="button button--primary" type="button">
+            查看我的灵魂信息素
+          </button>
+        </section>
 
         <section id="resultSection" class="result panel hidden" aria-live="polite">
           <p class="panel__label">测评结果</p>
@@ -125,9 +133,6 @@
           </div>
 
           <div class="share-actions">
-            <button id="copyLinkBtn" class="button button--ghost" type="button">
-              复制页面链接
-            </button>
             <button id="copyResultBtn" class="button button--primary" type="button">
               复制我的结果文案
             </button>

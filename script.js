@@ -382,9 +382,9 @@ const resultSection = document.querySelector("#resultSection");
 const answeredCount = document.querySelector("#answeredCount");
 const progressText = document.querySelector("#progressText");
 const progressFill = document.querySelector("#progressFill");
+const topProgressFill = document.querySelector("#topProgressFill");
 const submitBtn = document.querySelector("#submitBtn");
 const resetBtn = document.querySelector("#resetBtn");
-const copyLinkBtn = document.querySelector("#copyLinkBtn");
 const copyResultBtn = document.querySelector("#copyResultBtn");
 const shareFeedback = document.querySelector("#shareFeedback");
 
@@ -449,6 +449,7 @@ function updateProgress() {
   const progress = (answered / questions.length) * 100;
   answeredCount.textContent = String(answered);
   progressFill.style.width = `${progress}%`;
+  topProgressFill.style.width = `${progress}%`;
 
   if (answered === 0) {
     progressText.textContent = "先从第一直觉开始，别想太久。";
@@ -578,9 +579,6 @@ updateProgress();
 
 submitBtn.addEventListener("click", displayResult);
 resetBtn.addEventListener("click", resetQuiz);
-copyLinkBtn.addEventListener("click", () => {
-  copyText(window.location.href, "页面链接已复制，现在可以直接发给别人。");
-});
 copyResultBtn.addEventListener("click", () => {
   if (!lastProfileKey) {
     shareFeedback.textContent = "先完成测评并生成结果，再复制结果文案。";
